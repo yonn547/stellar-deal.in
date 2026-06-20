@@ -1,118 +1,88 @@
-# Stellar Notes DApp
+# deal.in Smart Contract
 
-**Stellar Notes DApp** - Blockchain-Based Decentralized Note-Taking System
+**deal.in** - Borderless Creator Payment & Immutable Fee Ledger
 
 ## Project Description
 
-Stellar Notes DApp is a decentralized smart contract solution built on the Stellar blockchain using Soroban SDK. It provides a secure, immutable platform for managing personal notes directly on the blockchain. The contract ensures that your data is stored transparently and is only manageable through predefined smart contract functions, eliminating reliance on centralized database providers.
+deal.in Smart Contract is a decentralized ledger solution built on the Stellar blockchain using the Soroban SDK. It serves as the transparent, unalterable backbone for the deal.in platform—a creator economy ecosystem designed to facilitate cross-border micro-payments in Asia. 
 
-The system allows users to create, view, and delete notes, leveraging the efficiency and security of the Stellar network. Each note is uniquely identified and stored within the contract's instance storage, ensuring data persistence and reliability.
+Currently, this contract acts as a transparent financial ledger. It securely records incoming payments from fans and automatically calculates a strict, trustless 95/5 fee split (95% to the creator, 5% to the platform). By utilizing smart contracts, deal.in ensures that revenue distribution is permanently recorded, mathematically guaranteed, and immune to hidden platform fees or manipulation.
 
 ## Project Vision
 
-Our vision is to revolutionize personal productivity in the digital age by:
+Our vision is to revolutionize the creator economy in Asia by breaking down financial borders and ensuring fair compensation through:
 
-- **Decentralizing Data**: Moving note-taking from centralized servers to a global, distributed blockchain
-- **Ensuring Ownership**: Empowering users to have complete control and ownership over their digital thoughts and information
-- **Guaranteeing Immutability**: Providing a permanent, tamper-proof record of notes that cannot be altered or deleted by third parties
-- **Enhancing Privacy**: Leveraging blockchain security to protect personal information from unauthorized access
-- **Building Trustless Systems**: Creating a platform where data integrity is guaranteed by code, not by company promises
+- **Borderless Support**: Enabling fans from anywhere to support creators using local payment methods, with the blockchain handling the settlement reality.
+- **Trustless Revenue Splitting**: Replacing opaque corporate fee structures with open-source, automated smart contract logic.
+- **Guaranteeing Immutability**: Providing a permanent, tamper-proof audit trail of all financial support a creator receives.
+- **Fostering Creator Independence**: Empowering creators to monetize their digital products and receive funds without relying on highly restrictive, centralized payment gateways.
 
-We envision a future where digital information is truly personal and sovereign, empowering individuals with complete autonomy over their digital assets.
+We envision a future where the path of money from a fan's local wallet to a creator's pocket is seamless, instant, and completely transparent.
 
 ## Key Features
 
-### 1. **Simple Note Creation**
+### 1. **Automated Fee Distribution**
+- Hardcoded, immutable 95% / 5% split for every recorded transaction.
+- Eliminates manual calculation errors or hidden platform deductions.
+- Mathematical precision enforced by the Rust compiler.
 
-- Create notes with just one function call
-- Specify title and content for each note
-- Automated ID generation for unique identification
-- Persistent storage on the Stellar blockchain
+### 2. **Transparent Payment Recording**
+- Create permanent payment records with a single function call.
+- Logs critical data: Fan Name, Creator Name, Gross Amount, and the exact split values.
+- Automated unique ID generation for every transaction.
 
-### 2. **Efficient Data Retrieval**
+### 3. **Efficient Ledger Retrieval**
+- Fetch the entire history of transactions for instant frontend display.
+- Structured data representation (`TipRecord`) for easy integration with dashboards.
+- Real-time synchronization with the Stellar blockchain state.
 
-- Fetch all stored notes in a single call
-- Structured data representation for easy frontend integration
-- Quick access to your entire note collection
-- Real-time synchronization with the blockchain state
-
-### 3. **Secure Deletion**
-
-- Remove specific notes using their unique IDs
-- Permanent removal from the contract storage
-- Clean and efficient storage management
-- Immediate update of the note list after deletion
-
-### 4. **Transparency and Security**
-
-- View all note activities on the blockchain
-- Blockchain-based verification of all storage actions
-- Immutable records of note creation and deletion
-- Protected against unauthorized modifications
+### 4. **Auditability and Security**
+- View all financial activities openly on the blockchain.
+- Protection against unauthorized modifications—once a payment is recorded, it cannot be altered or deleted.
+- Built with a focus on smart contract security and strict data types (`u64` to prevent negative value exploits).
 
 ### 5. **Stellar Network Integration**
-
-- Leverages the high speed and low cost of Stellar
-- Built using the modern Soroban Smart Contract SDK
-- Scalable architecture for growing note collections
-- Interoperable with other Stellar-based services
+- Leverages the high speed and near-zero cost of the Stellar ecosystem.
+- Built using the modern, Rust-based Soroban Smart Contract SDK.
+- Serves as the foundation for future direct USDC settlement integration.
 
 ## Contract Details
 
-- Contract Address: CBLU4IUASQ4WUMOXBFLZRSBBLILGOH33GS4LUPKFBCCCMJCDQNMF7G2M
-  (Screenshot has been removed)
+- **Network**: Stellar Testnet
+- **Contract Address**: CDW5ZJHPIVRSPKQGOKB5IWR5EOOFIRBBC6Y6EOVI5EYMQ42LZN42OTKQ
 
 ## Future Scope
 
 ### Short-Term Enhancements
-
-1. **Note Encryption**: Support for end-to-end encryption of note content for enhanced privacy
-2. **Category Management**: Add tags and categories to organize notes efficiently
-3. **Rich Text Support**: Extend support beyond plain text to include Markdown and formatted content
-4. **Search Functionality**: Implement advanced search filters for large note collections
+1. **Direct USDC Settlement**: Upgrade the contract from a pure ledger to handle actual USDC token transfers via Soroban Token Client.
+2. **Access Control**: Implement `require_auth()` so only authorized deal.in backend servers can record valid local fiat payments.
+3. **Event Emission**: Use `env.events().publish()` to notify off-chain applications the moment a payment split occurs.
 
 ### Medium-Term Development
-
-5. **Collaborative Notes**: Implement multi-signature requirements for shared or collaborative note-taking
-   - Shared access for multiple addresses
-   - Permission-based editing and viewing
-   - Version history tracking
-6. **Notification System**: Off-chain bridge to alert users of new updates or shared notes
-7. **Asset Attachment**: Capability to attach digital assets or tokens to specific notes
-8. **Inter-Contract Integration**: Allow other smart contracts to interact with and store data in the notes contract
+4. **Creator Subscriptions**: Smart contract logic to handle recurring monthly support.
+5. **Decentralized Escrow**: Hold funds in the contract until a buyer confirms receipt of a digital product.
+6. **Multi-Asset Support**: Allow settlements in various Stellar-based stablecoins (e.g., EURC, AUDD).
 
 ### Long-Term Vision
-
-9. **Cross-Chain Synchronization**: Extend note storage to multiple blockchain networks
-10. **Decentralized UI Hosting**: Host the frontend on IPFS or similar decentralized platforms
-11. **AI-Powered Summarization**: Optional integration with AI to help users summarize their notes
-12. **Privacy Layers**: Implement zero-knowledge proofs for completely private note content
-13. **DAO Governance**: Community-driven protocol improvements and feature prioritization
-14. **Identity Management**: Integration with decentralized identity (DID) systems for user management
-
-### Enterprise Features
-
-15. **Corporate Documentation**: Adapt the system for secure corporate record-keeping
-16. **Immutable Logging**: Create time-locked logs for audit purposes
-17. **Automated Reporting**: Automatic note triggers for periodic reporting
-18. **Multi-Language Support**: Expand accessibility with internationalization
+7. **Cross-Platform Widget**: Package deal.in as a Web3 payment widget that can be embedded into other platforms.
+8. **Creator Tokenization**: Allow top creators to launch their own social tokens.
+9. **DAO Governance**: Transition platform fee adjustments and feature upgrades to community voting.
 
 ---
 
 ## Technical Requirements
 
-- Soroban SDK
 - Rust programming language
-- Stellar blockchain network
+- Soroban SDK (`soroban-cli`)
+- Stellar blockchain network (Testnet/Futurenet)
 
 ## Getting Started
 
-Deploy the smart contract to Stellar's Soroban network and interact with it using the three main functions:
+Deploy the smart contract to Stellar's Soroban network and interact with it using the main functions:
 
-- `create_note()` - Create a new note with a title and content
-- `get_notes()` - Retrieve all stored notes from the contract
-- `delete_note()` - Remove a specific note by its ID
+- `record_payment(creator: String, fan: String, amount: u64)` - Calculate the split and record a new transaction.
+- `get_all_transactions()` - Retrieve the immutable list of all recorded payments.
 
 ---
 
-**Stellar Notes DApp** - Securing Your Thoughts on the Blockchain
+**deal.in** — Sell your content. Get paid by anyone, from anywhere.
