@@ -4,7 +4,7 @@
 
 ## Project Description
 
-deal.in Smart Contract is a decentralized ledger solution built on the Stellar blockchain using the Soroban SDK. It serves as the transparent, unalterable backbone for the deal.in platform—a creator economy ecosystem designed to facilitate cross-border micro-payments in Asia. 
+deal.in Smart Contract is a decentralized ledger solution built on the Stellar blockchain using the Soroban SDK. It serves as the transparent, unalterable backbone for the deal.in platform creator economy ecosystem designed to facilitate cross-border micro-payments in Asia. 
 
 Currently, this contract acts as a transparent financial ledger. It securely records incoming payments from fans and automatically calculates a strict, trustless 95/5 fee split (95% to the creator, 5% to the platform). By utilizing smart contracts, deal.in ensures that revenue distribution is permanently recorded, mathematically guaranteed, and immune to hidden platform fees or manipulation.
 
